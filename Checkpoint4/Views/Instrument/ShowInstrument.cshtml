@@ -1,0 +1,57 @@
+﻿@model Checkpoint4.Models.Instrument
+
+@{
+    ViewBag.Title = "Show Instrument";
+}
+<script>
+    function reveal(type) {
+        if (type === "Used") {
+            document.getElementById("Used").style.display = "block";
+            document.getElementById("New").style.display = "none";
+        } else if (type === "New") {
+            document.getElementById("New").style.display = "block";
+            document.getElementById("Used").style.display = "none";
+        }
+    }
+
+
+</script>
+<h2>Show Instrument</h2>
+
+<div style="background-color: #ffffff">
+    <h4>Instrument</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InstDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstDesc)
+        </dd>
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.InstPrice)
+
+        </dt>
+
+        <dd>
+            $@Html.DisplayFor(model => model.InstPrice)
+        </dd>
+
+
+    </dl>
+    <a href="@Url.Action("Create", "Clients", new { iTempInstID = Model.InstID }, null)" class="btn btn-primary">
+        Rent Instrument
+    </a>
+    <p class="text-primary">
+        PLEASE NOTE: Once the 18 months has been achieved, you own the instrument.
+        If you return it at any time before 3 months there will be a $200 re-stocking fee.
+        If you return it after 3 months you forfeit any equity in the instrument.
+    </p>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", "Home")
+    
+</p>

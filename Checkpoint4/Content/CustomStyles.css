@@ -1,0 +1,20 @@
+﻿body {
+    background-image: url('Images/classicmusic.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.myFooterText {
+    font-family: fantasy;
+    font-size: larger;
+}
+
+.custCenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.custBgColor {
+    background-color: #ffffff
+}

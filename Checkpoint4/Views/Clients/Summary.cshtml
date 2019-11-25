@@ -1,0 +1,138 @@
+﻿@model Checkpoint4.Models.Client
+
+@{
+    ViewBag.Title = "Summary";
+}
+
+<h2>Order Summary</h2>
+
+<div>
+    <h4>Thank you for your purchase, <span>@Html.DisplayFor(model => model.CliFirstName)</span>!</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Order Id
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliPhone)
+        </dd>
+
+        <dt>
+            Instrument Name
+        </dt>
+
+        <dd>
+            @Html.Raw(ViewBag.Inst.InstDesc)
+        </dd>
+
+        <dt>
+            Instrument ID
+        </dt>
+
+        <dd>
+            @Html.Raw(ViewBag.Inst.InstID)
+        </dd>
+
+        <dt>
+            Instrument Type
+        </dt>
+
+        <dd>
+            @Html.Raw(ViewBag.Inst.InstType)
+        </dd>
+
+        <dt>
+            Monthly Price
+        </dt>
+
+        <dd>
+            $@Html.Raw(ViewBag.Inst.InstPrice)
+        </dd>
+
+        <dt>
+            18 Month Total
+        </dt>
+
+        <dd>
+            $@Html.Raw(ViewBag.Sum)
+        </dd>
+
+        <dt>
+            Instrument Image
+        </dt>
+
+        <dd>
+            <img src="@Html.Raw(ViewBag.Inst.InstImg)" style="width: 100px"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit") |
+    @Html.ActionLink("Back to List", "Index")
+</p>

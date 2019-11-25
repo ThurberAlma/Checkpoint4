@@ -1,0 +1,88 @@
+﻿@model Checkpoint4.Models.Client
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CliFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliPhone)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,80 @@
+﻿@model Checkpoint4.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dd>
+            @Html.DisplayFor(model => model.CliFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CliPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CliPhone)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
