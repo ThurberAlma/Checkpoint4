@@ -57,15 +57,19 @@ namespace Checkpoint4.Controllers
                 Instrument Instrument = db.Instruments.Find(client.InstID);
                 Instrument.ClientId = client.ClientId;
                 db.SaveChanges();
+
                 //I included Instrument ID in the model.  However you did it, set an Instrument object
                 //  equal to the instrument that has your InstID  VVVVVVV
                 Instrument instrument = db.Instruments.Find(client.InstID);
+
                 //set a client object to the one you're currently working with
                 Client myClient = db.Clients.Find(client.ClientId);
                 //put both of those objects in the viewbag
+
                 ViewBag.Inst = instrument;
                 ViewBag.Sum = (Int32.Parse(instrument.InstPrice) * 18);
                 ViewBag.Client = myClient;
+
                 //go to summary and use @ViewBag.Client.CliFirstName etc
                 return View("Summary", myClient);
             }

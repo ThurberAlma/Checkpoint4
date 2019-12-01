@@ -78,7 +78,14 @@
         </div>
     </div>
 
-    <input type="hidden" name="InstID" value="@ViewBag.TempInstId" />
+    @if (Model is null)
+    {
+        <input type="hidden" name="InstID" value="@ViewBag.TempInstId" />
+    }
+    else
+    {
+        @Html.HiddenFor(model => model.InstID)
+    }
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
