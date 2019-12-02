@@ -1,4 +1,4 @@
-﻿@model Checkpoint4.Models.Client
+﻿@model Checkpoint4.Models.InstrumentsClient
 
 @{
     ViewBag.Title = "Summary";
@@ -7,7 +7,7 @@
 <h2>Order Summary</h2>
 
 <div>
-    <h4>Thank you for your purchase, <span>@Html.DisplayFor(model => model.CliFirstName)</span>!</h4>
+    <h4>Thank you for your purchase, <span>@Html.DisplayFor(model => model.client.CliFirstName)</span>!</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -15,71 +15,71 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ClientId)
+            @Html.DisplayFor(model => model.client.ClientId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliFirstName)
+            @Html.DisplayNameFor(model => model.client.CliFirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliFirstName)
+            @Html.DisplayFor(model => model.client.CliFirstName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliLastName)
+            @Html.DisplayNameFor(model => model.client.CliLastName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliLastName)
+            @Html.DisplayFor(model => model.client.CliLastName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliAddress)
+            @Html.DisplayNameFor(model => model.client.CliAddress)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliAddress)
+            @Html.DisplayFor(model => model.client.CliAddress)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliCity)
+            @Html.DisplayNameFor(model => model.client.CliCity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliCity)
+            @Html.DisplayFor(model => model.client.CliCity)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliState)
+            @Html.DisplayNameFor(model => model.client.CliState)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliState)
+            @Html.DisplayFor(model => model.client.CliState)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliZip)
+            @Html.DisplayNameFor(model => model.client.CliZip)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliZip)
+            @Html.DisplayFor(model => model.client.CliZip)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliEmail)
+            @Html.DisplayNameFor(model => model.client.CliEmail)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliEmail)
+            @Html.DisplayFor(model => model.client.CliEmail)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CliPhone)
+            @Html.DisplayNameFor(model => model.client.CliPhone)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CliPhone)
+            @Html.DisplayFor(model => model.client.CliPhone)
         </dd>
 
         <dt>
@@ -87,7 +87,7 @@
         </dt>
 
         <dd>
-            @Html.Raw(ViewBag.Inst.InstDesc)
+            @Html.DisplayFor(model => model.instrument.InstDesc)
         </dd>
 
         <dt>
@@ -95,7 +95,7 @@
         </dt>
 
         <dd>
-            @Html.Raw(ViewBag.Inst.InstID)
+            @Html.DisplayFor(model => model.instrument.InstID)
         </dd>
 
         <dt>
@@ -103,7 +103,7 @@
         </dt>
 
         <dd>
-            @Html.Raw(ViewBag.Inst.InstType)
+            @Html.DisplayFor(model => model.instrument.InstType)
         </dd>
 
         <dt>
@@ -111,7 +111,7 @@
         </dt>
 
         <dd>
-            $@Html.Raw(ViewBag.Inst.InstPrice)
+            $@Html.DisplayFor(model => model.instrument.InstPrice)
         </dd>
 
         <dt>
@@ -127,7 +127,7 @@
         </dt>
 
         <dd>
-            <img src="@Html.Raw(ViewBag.Inst.InstImg)" style="width: 100px"/>
+            <img src="@Html.DisplayFor(model => model.instrument.InstImg)" style="width: 100px"/>
         </dd>
 
     </dl>

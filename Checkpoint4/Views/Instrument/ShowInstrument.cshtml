@@ -31,6 +31,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.InstType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstType)
+        </dd>
+
+        <dt>
 
             @Html.DisplayNameFor(model => model.InstPrice)
 
@@ -39,12 +47,13 @@
         <dd>
             $@Html.DisplayFor(model => model.InstPrice)
         </dd>
-
-
     </dl>
+
     <a href="@Url.Action("Create", "Clients", new { iTempInstID = Model.InstID }, null)" class="btn btn-primary">
         Rent Instrument
     </a>
+
+    <br /><br />
     <p class="text-primary">
         PLEASE NOTE: Once the 18 months has been achieved, you own the instrument.
         If you return it at any time before 3 months there will be a $200 re-stocking fee.

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Checkpoint4.Models
 {
@@ -11,9 +12,8 @@ namespace Checkpoint4.Models
     public class Client
     {
         [Key]
-        [Required(ErrorMessage = "ClientID is required")]
         [Display(Name = "ClientID")]
-        public int ClientId { get; set; }
+        public int? ClientId { get; set; }
 
         [Required(ErrorMessage = "First Name is required")]
         [Display(Name = "First Name")]
@@ -33,6 +33,7 @@ namespace Checkpoint4.Models
 
         [Required(ErrorMessage = "State is required")]
         [Display(Name = "State")]
+        [StringLength(2,ErrorMessage ="Please use the 2 letter abbreviation.  EX: UT, WI, NY")]
         public string CliState { get; set; }
 
         [Required]

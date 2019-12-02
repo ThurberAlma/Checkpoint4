@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Instrument.cs" />
+    <Compile Include="Models\InstrumentsClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +221,7 @@
     <Content Include="Views\Home\Rentals.cshtml" />
     <Content Include="Views\Instrument\ShowInstrument.cshtml" />
     <Content Include="Views\Clients\Summary.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

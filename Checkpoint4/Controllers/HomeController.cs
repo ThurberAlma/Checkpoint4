@@ -5,15 +5,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Checkpoint4.Controllers
 {
     public class HomeController : Controller
     {
-        private BlowOutContext db = new BlowOutContext();
+        BlowOutContext db = new BlowOutContext();
 
-        public ActionResult Index()
+        public ActionResult Login()
         {
+            return View();
+        }
+
+        public void SignOut()
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+        }
+
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String Username = form["Username"].ToString();
+            String password = form["Password"].ToString();
+
+            if (string.Equals(Username, "Missouri") && (string.Equals(password, "ShowMe")))
+            {
+                FormsAuthentication.SetAuthCookie(Username, rememberMe);
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [Authorize]
+        public ActionResult Index()
+        { 
             return View();
         }
 
@@ -33,7 +64,7 @@ namespace Checkpoint4.Controllers
 
         public ActionResult Rentals()
         {
-            return View();
+            return View(db.Instruments.ToList());
         }
     }
 }

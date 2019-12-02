@@ -14,188 +14,21 @@
     <!-- First Row -->
     <div class="row" style="height:auto;">
 
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 1 }, null)">
-                        <img class="card-title" src="https://images-na.ssl-images-amazon.com/images/I/71VuWpPzAuL._SX425_.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">New Trumpet</h4>
-                        </div>
-                    </a>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+                <div class="container-fluid">
+                    <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
+                        <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = item.InstID }, null)">
+                            <img class="card-title" src="@item.InstImg" style="width: 100%; height: 380px" />
+                            <div class="card-body">
+                                <h4 class="card-title btn btn-primary">@item.InstType @item.InstDesc</h4>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 2 }, null)">
-                        <img class="card-title" src="https://www.hornhospital.com/main/wp-content/uploads/american-trumpet-42737.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">Old Trumpet</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 3 }, null)">
-                        <img class="card-title" src="https://cdn.shoplightspeed.com/shops/612125/files/11137624/image.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">New Trombone</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 4 }, null)">
-                        <img class="card-title" src="https://i.redd.it/brgw1v7nadf11.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">Old Trombone</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 5 }, null)">
-                        <img class="card-title" src="https://i.ebayimg.com/images/g/s4QAAOSwzSdbyfJW/s-l300.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">New Tuba</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 6 }, null)">
-                        <img class="card-title" src="https://images-na.ssl-images-amazon.com/images/I/61yfRh2NC6L._SX425_.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">Old Tuba</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-    <!-- Second Row -->
-    <div class="row" style="height:auto;">
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 7 }, null)">
-                        <img class="card-title" src="https://images-na.ssl-images-amazon.com/images/I/41%2B7GConwcL._SX425_.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">New Flute</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 8 }, null)">
-                        <img class="card-title" src="https://www.kesslerandsons.com/wp-content/uploads/2015/11/pearl-quantz-f665-flute2.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">Old Flute</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 9 }, null)">
-                        <img class="card-title" src="https://www.kesslerandsons.com/wp-content/uploads/yamaha-rental-clarinet.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">New Clarinet</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 10 }, null)">
-                        <img class="card-title" src="https://i.redd.it/lcs6z3ue9xb31.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">Old Clarinet</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 11 }, null)">
-                        <img class="card-title" src="https://i.ebayimg.com/images/g/yv4AAMXQVs1Rjc8D/s-l300.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">New Saxophone</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <!-- Card -->
-            <div class="container-fluid">
-                <div class="card" style="width:100%; height: auto: float:right; margin: 10px; border: solid 2px black;">
-                    <a href="@Url.Action("ShowInstrument", "Instrument", new { iID = 12 }, null)">
-                        <img class="card-title" src="https://storage.bhs1.cloud.ovh.net/v1/AUTH_e7d15450bedd40b9b599e075527df3cb/jackson/fNew_ALLARIA_BN360_Alto_Saxophone__ReedsA_5abebdb7642ea.jpg" style="width: 100%; height: 380px" />
-                        <div class="card-body">
-                            <h4 class="card-title btn btn-primary">Old Saxophone</h4>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
+        }
 
     </div>
 </div>

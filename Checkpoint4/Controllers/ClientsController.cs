@@ -39,8 +39,10 @@ namespace Checkpoint4.Controllers
         // GET: Clients/Create
         public ActionResult Create(int iTempInstID)
         {
-            ViewBag.TempInstId = iTempInstID;
-            return View();
+            InstrumentsClient instrumentsClient = new InstrumentsClient();
+            instrumentsClient.instrument = db.Instruments.Find(iTempInstID);
+
+            return View(instrumentsClient);
         }
 
         // POST: Clients/Create
@@ -48,33 +50,36 @@ namespace Checkpoint4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ClientId,CliFirstName,CliLastName,CliAddress,CliCity,CliState,CliZip,CliEmail,CliPhone,InstID")] Client client)
+        public ActionResult Create(InstrumentsClient instrumentsClient)
         {
             if (ModelState.IsValid)
             {
-                db.Clients.Add(client);
+                var entity = new Client()
+                {
+                    CliFirstName = instrumentsClient.client.CliFirstName,
+                    CliLastName = instrumentsClient.client.CliLastName,
+                    CliAddress = instrumentsClient.client.CliAddress,
+                    CliCity = instrumentsClient.client.CliCity,
+                    CliState = instrumentsClient.client.CliState,
+                    CliZip = instrumentsClient.client.CliZip,
+                    CliEmail = instrumentsClient.client.CliEmail,
+                    CliPhone = instrumentsClient.client.CliPhone
+                };
+
+                db.Clients.Add(entity);
                 db.SaveChanges();
-                Instrument Instrument = db.Instruments.Find(client.InstID);
-                Instrument.ClientId = client.ClientId;
+
+                instrumentsClient.client = entity;
                 db.SaveChanges();
 
-                //I included Instrument ID in the model.  However you did it, set an Instrument object
-                //  equal to the instrument that has your InstID  VVVVVVV
-                Instrument instrument = db.Instruments.Find(client.InstID);
+                ViewBag.Sum = (Int32.Parse(instrumentsClient.instrument.InstPrice) * 18);
 
-                //set a client object to the one you're currently working with
-                Client myClient = db.Clients.Find(client.ClientId);
-                //put both of those objects in the viewbag
-
-                ViewBag.Inst = instrument;
-                ViewBag.Sum = (Int32.Parse(instrument.InstPrice) * 18);
-                ViewBag.Client = myClient;
-
+                ModelState.Clear();
                 //go to summary and use @ViewBag.Client.CliFirstName etc
-                return View("Summary", myClient);
+                return View("Summary", instrumentsClient);
             }
 
-            return View(client);
+            return View(instrumentsClient);
         }
 
         public ActionResult Summary(Client oClient)
