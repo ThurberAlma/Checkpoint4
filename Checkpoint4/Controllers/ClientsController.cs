@@ -8,7 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using Checkpoint4.DAL;
 using Checkpoint4.Models;
-//What a nice controller. Super duper cool controller.  No, I'm editing.
+
+//What a nice controller. Super duper cool controller. Don't you dare edit here. No, I'm editing.
+
 namespace Checkpoint4.Controllers
 {
     public class ClientsController : Controller
