@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Checkpoint4.Models.Instrument>
+
+@{
     ViewBag.Title = "BlowOut Musical Instrument Rentals";
 }
 <!--
@@ -12,10 +14,19 @@
     <p class="lead">Take a look around and you'll see why we blow our competition out of the water!</p>
 </div>
 
+@foreach (var item in Model)
+{
+    @item.InstID<br />
+    @item.InstDesc<br />
+    @item.InstType<br />
+    @item.InstPrice<br />
+    <br /><br />
+}
+
 <div class="row">
     <div class="col-md-9">
         <!--Just for spacing purposes-->
-        
+
     </div>
     <div class="col-md-3" style="background-color: #ff8149">
         <div class="card myFooterText custCenter" style="width: 80%;">
