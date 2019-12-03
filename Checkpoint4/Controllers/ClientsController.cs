@@ -15,7 +15,7 @@ namespace Checkpoint4.Controllers
     {
         private BlowOutContext db = new BlowOutContext();
 
-        // GET: Clients
+        // GET: Clients here is another comment.
         public ActionResult Index()
         {
             return View(db.Clients.ToList());
