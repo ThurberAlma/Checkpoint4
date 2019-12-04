@@ -45,8 +45,7 @@ namespace Checkpoint4.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            IEnumerable<Instrument> instruments = db.Database.SqlQuery<Instrument>("SELECT * FROM Instrument");
-            return View(instruments);
+            return View();
         }
 
         public ActionResult About()

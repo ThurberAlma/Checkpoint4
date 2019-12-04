@@ -1,6 +1,4 @@
-﻿@model IEnumerable<Checkpoint4.Models.Instrument>
-
-@{
+﻿@{
     ViewBag.Title = "BlowOut Musical Instrument Rentals";
 }
 <!--
@@ -13,15 +11,6 @@
     <p class="lead">Here you are able to rent new and used instruments for killer prices</p>
     <p class="lead">Take a look around and you'll see why we blow our competition out of the water!</p>
 </div>
-
-@foreach (var item in Model)
-{
-    @item.InstID<br />
-    @item.InstDesc<br />
-    @item.InstType<br />
-    @item.InstPrice<br />
-    <br /><br />
-}
 
 <div class="row">
     <div class="col-md-9">
