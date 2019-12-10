@@ -17,4 +17,4 @@ namespace Checkpoint4.DAL
         public DbSet<Client> Clients { get; set; }
         public DbSet<Instrument> Instruments { get; set; }
     }
-}
+} 
